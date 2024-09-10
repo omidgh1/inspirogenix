@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import HomePage
 
-# Create your views here.
+def homepage_view(request):
+    homepage = HomePage.objects.first()
+    return render(request, 'home.html', {'homepage': homepage})
